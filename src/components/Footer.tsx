@@ -183,6 +183,8 @@ const Footer: React.FC = () => {
                     <img
                         src={footerLogo}
                         alt="AgencIA Logo"
+                        loading="lazy"
+                        decoding="async"
                         style={{
                             width: '160px',
                             height: 'auto',

@@ -657,7 +657,7 @@ const Home: React.FC = () => {
                     backgroundColor: 'transparent',
                     overflow: 'hidden', opacity: 1
                 }}>
-                    <video src={videoSrc} autoPlay muted loop playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <video src={videoSrc} autoPlay muted loop playsInline preload="metadata" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
 
                 {/* 1. NARRATIVE HERO (ESENCIA TEXT) */}
@@ -787,6 +787,8 @@ const Home: React.FC = () => {
                                 <img
                                     src={officialTypography}
                                     alt="AgencIA"
+                                    loading="lazy"
+                                    decoding="async"
                                     style={{
                                         height: 'clamp(1.8rem, 4.5vw, 4rem)', // Tuned for crispness
                                         width: 'auto',
@@ -1070,7 +1072,7 @@ const Home: React.FC = () => {
                                 alignItems: 'center'
                             }}
                         >
-                            <img src={footerLogo} alt="AgencIA Logo" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+                            <img src={footerLogo} alt="AgencIA Logo" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
                         </div>
 
                         {/* CTA CONTENT - Hidden initially */}
