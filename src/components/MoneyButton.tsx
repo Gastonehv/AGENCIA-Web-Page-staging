@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { useScroll } from '../context/ScrollContext';
 
@@ -8,7 +8,10 @@ const MoneyButton = () => {
 
   const handleClick = () => {
     if (lenis) {
-      lenis.scrollTo('#contacto', { duration: 1.5, ease: 'power4.inOut' });
+      lenis.scrollTo('#contacto', {
+        duration: 1.5,
+        easing: (t: number) => 1 - Math.pow(1 - t, 4),
+      });
     } else {
       document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
     }
